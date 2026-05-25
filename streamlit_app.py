@@ -20,9 +20,9 @@ session = cnx.session()
 #st.write('Your Favorite Fruit Is:', option)
 
 #session = get_active_session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
-#st.dataframe(data=my_dataframe, use_container_width=True)
-
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('SEARCH_ON'))
+st.dataframe(data=my_dataframe, use_container_width=True)
+st.stop()
 customer_name = st.text_input('Name on Smoothie:')
 
 ingredients_list = st.multiselect(
